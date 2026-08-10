@@ -14,17 +14,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
-  jackson:
-    serialization:
-      indent-output: true
-
-  # Keep this only if you want SQL formatting
-  jpa:
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+
+  jackson:
+    serialization:
+      indent-output: true
 
 springdoc:
   api-docs:
