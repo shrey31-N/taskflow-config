@@ -1,6 +1,3 @@
-server:
-  port: 8081
-
 spring:
   application:
     name: user-service
@@ -9,7 +6,6 @@ spring:
     url: jdbc:mysql://localhost:3306/taskflow_db
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -21,13 +17,15 @@ spring:
       max-file-size: 5MB
       max-request-size: 5MB
 
+server:
+  port: 8081
+
 jwt:
   secret: MySuperSecretKeyForTaskFlowApplication123456789
   expiration: 3600000
 
 aws:
   region: ap-south-1
-
   s3:
     bucket-name: taskflow-pro-profile-images
     access-key: AKIATWHY2XNZNPVBAIF3
@@ -42,3 +40,9 @@ eureka:
 
   instance:
     prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
